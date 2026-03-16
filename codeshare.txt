@@ -1,1 +1,266 @@
 
+
+#############################
+### string methods:
+################################
+# slicing
+name = "python programming"
+print(name)
+print(name[0])
+print(name[1])
+print(name[-1])
+print(name[-2])
+print(name[0:8])
+print(name[:])
+print(name[::])
+
+print(name[0:16:2])
+print(name[::-1])
+
+
+
+
+# string methods
+print(name.capitalize())
+print(name.upper())
+print(name.isupper())
+print(name.lower())
+print(name.islower())
+print(name.center(30))
+print(name.center(30,'*'))
+print(name.count('p'))
+print(name.split(" "))
+print(name.endswith("g"))
+print(name.startswith("p"))
+aname = " python  "
+print(aname.strip()) #will removes white spaces at both ends
+print("length after striping white spaces :",len(aname.strip()))
+print(aname.lstrip()) #will removes white spaces at left side
+print("length after striping white spaces :",len(aname.lstrip()))
+print(aname.rstrip()) #will removes white spaces at right side
+print("length after striping white spaces :",len(aname.rstrip()))
+
+print(len(aname))
+print(name.replace("python","unix"))
+
+
+
+###################################
+#### list methods ###############
+##############################
+# list methods
+alist = [45,23,65,32,56,26,36,17]
+alist.append(92)
+print("After appending:",alist)
+
+
+alist.extend([85,71,19])
+print("After extending:",alist)
+
+
+alist.insert(0,100)
+print("After inserting:",alist)
+
+
+alist.pop(4) # list.pop(index)
+print("After pop operation :",alist)
+alist.remove(23) # list.remove(value) - value will be removed from list if existing
+print("After remove operation :",alist)
+
+alist.reverse()
+print("After reversing :",alist)
+alist.sort()
+print("After sorting :",alist)
+
+#################################
+# difference betwen list and tuple
+###################################
+alist = [30,40,45]
+alist[0] = 300
+print(alist)
+
+# tuple
+atup = (34,34,43)
+#atup[0] = 340
+print(atup)
+alist = list(atup)  # converting to list
+alist[0] = 340      # making changes
+atup = tuple(alist) # reconverting back to tuple
+print(atup)
+
+
+
+################# tuple methods ###########################
+atup = (10,20,30)
+print(atup.count(10))
+print(len(atup))
+
+name = "python"
+print(len(name))
+
+alist = [10,20,30,30,40]
+print(len(alist))
+
+
+
+###################################################
+# dictionary  # key-value pairs
+#####################################################
+book = {"chap1":10 ,"chap2":20,"chap3":30}
+# display individuval value
+print(book["chap1"]) # 10
+print(book["chap2"]) # 20
+# crate new key-value pairs
+book["chap4"] = 40
+book["chap5"] = 50
+book["chap6"] = 60
+print(book)
+
+# display ONLY Keys
+print(book.keys())
+
+# dipslay values
+print(book.values())
+
+# display items
+print(book.items()) # key and value makes an item
+
+# remove key-value from dictionary
+book.pop("chap1") # chap1-10 wil be removed from dictionary
+print(book)
+
+book.popitem()    # will remove last key-value pair
+print(book)
+
+################## joining dictionaries
+
+book = {"chap1":10 ,"chap2":20,"chap3":30}
+newbook = {"chap4":40 ,"chap5":50}
+finalbook = {**book,**newbook}    
+print("final dictionary :", finalbook)
+
+# existing book is getting updated
+book.update(finalbook)
+
+# if key is not found.. will throw error
+#print(book["chap9"])
+print(book.get("chap9"))  # if key is not found.. it returns None
+# converting list to dictionary
+data = ["name","Age","city"]
+mydict = dict.fromkeys(data) # { "name":None, "Age": None,"city": None}
+print(mydict)
+mydict = dict.fromkeys(data,0)
+print(mydict)
+
+
+################################### set methods ################
+aset = {10,10,10,20,20,20,30}
+bset = {30,30,30,40,40,40,50}
+
+print(aset)
+print(bset)
+
+aset.add(30)
+print(aset) # no difference
+aset.add(40)
+print(aset)
+
+print(aset.union(bset))
+print(aset.intersection(bset))
+print(aset.difference(bset))
+
+print(aset.difference_update(bset))
+
+
+
+############################ if conditions ##############
+
+
+### simple if condition
+if 1 < 2 :
+    print("condition is true")
+
+### simple if condition
+name = "python"
+if name.startswith("p"):
+    print("its python")
+    print("inside")
+    print("still inside")
+### if-else condition
+if name.islower():
+    print("string is lower")
+else:
+    print("string is lower")
+
+##### if-elif-elif-elif-else 
+lang = input("Enter any language:")
+if lang == "python":
+    print("its python")
+elif lang == "java":
+    print("its java")
+elif lang == "oracle":
+    print("its oracle")
+else:
+    print("its someother language")
+
+### check for existence of the item
+name = "python programming"
+if "program" in name:
+    print("its python")
+
+alist = [10,20,30,40]
+if 10 in alist:
+    print("exists")
+
+book = {"chap1":10 ,"chap2":20}
+if "chap1" in book:
+    print("key exists")
+
+
+
+##################### for loop ###############################
+
+# for loop
+# range(start,stop,step)
+for i in range(1,11):
+    print(i)
+print("***************************")
+# range(start,stop,incremental)
+for i in range(1,11,2):
+    print(i)
+print("***************************")
+for i in range(2,11,2):
+    print(i)
+print("***************************")
+name = "python"
+for char in name:
+    print(char)
+print("***************************")
+alist = [10,20,30]
+for val in alist:
+    print(val)
+print("***************************")
+atup = (10,20,30)
+for val in atup:
+    print(val)
+print("***************************")
+book = {"chap1":10 ,"chap2":20}
+# display keys
+for k in book.keys():
+    print(k)
+print("***************************")
+# display values
+for v in book.values():
+    print(v)
+print("***************************")
+# dipslay k,v at a time
+for k,v in book.items():
+    print(k,v)
+
+
+
+################################################
+
+
+
+
