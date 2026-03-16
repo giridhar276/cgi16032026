@@ -1,0 +1,261 @@
+
+
+C programming - datatypes 
+---------------------
+int a = 10;
+float b = 3.34;
+char c = 'a';
+double d 
+long
+short
+
+
+python objects 
+------------------
+number
+string 
+list
+tuple
+dictionary
+set
+
+number 
+-------
+number can be integer or decimal or octal or hexa.
+
+aval = 10 
+bval = 43.43
+
+
+string 
+------
+string is defined in single or double or triple quotes.
+
+
+aname = 'python programming'
+bname = "java programming"
+cname = """unix shell scripting"""
+
+
+list ( array in C )
+---------------------
+list contains set of elements.
+Elements can be set of numbers or strings or any combination.
+list is defined in []
+
+alist = [10,20,30,40]
+blist = ["java","unix","oracle"]
+clist = [[10,20],[40,50]]
+dlist = [34,34,45.43,"java",[10,20,30],{1:2,3:4} }
+
+
+tuple  ( immutable , unchangeable, uneditable ) 
+------
+tuple contains set of elements.
+Elements can be set of numbers or strings or any combination.
+tuple is defined in ().
+** Elements inside tuple cannot be modified directly ****
+
+atup = (40,40,50,34)
+btup = ("java","oracle"unix")
+
+
+dictionary ( different names in differnt langs: json hash  hashmap  pairs  associativearray )
+--------------
+dictionary contains elements in keys and values.
+** In dictionary, keys are UNIQUE **
+key would be either number or string used to identify the value.
+value can be number or string or list or tuple or dictionary
+
+syntax:  object = { key:value  , key:value , key:value }
+example:   book = { "chap1":10 ,"chap2":20 ,"chap3":30 }
+
+
+	index
+	======
+chap1		10
+chap2		20
+chap3		30
+chap4		30
+
+
+set 
+-------
+set is UNORDERED collection of UNIQUE elements of SAME type.
+
+
+aset = {10,10,10,20,20,20,30}
+
+
+
+
+#list of lists
+empdb = [["rita",30,34434343"F"],["rao",31,56544554343,"M"]]
+
+
+# list of tuples 
+empdb = [("rita",30,34434343"F"),("rao",31,56544554343,"M")]
+
+
+
+** Everything in python is object ***
+** Every object contains methods ***
+
+string methods
+list methods
+tuple methods
+dictionary methods
+set methods.
+
+
+
+
+conditional statements 
+-----------------------
+if 
+if-else 
+if-elif-elif-elif-elif-else 
+
+control statements 
+----------------------
+for loop 
+while loop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### 
+# c
+for ( i = 1 ; i <=10 ;i++ )
+{
+
+}
+
+# python 
+
+for val in range(1,11):
+    print(val)
+
+
+file handling 
+---------------
+txt 
+csv 
+conf
+xlsx 
+docx 
+pdf 
+zip 
+rar
+log 
+json 
+rar 
+mp3 
+mp4
+dat 
+jpg
+gif
+json 
+yaml 
+msg
+7z 
+pptx 
+sh 
+bat 
+
+
+working with flat files  : txt csv  json conf  log dat 
+---------------------------
+we can read and write directly using builtin functions and libraries 
+
+
+
+working with third party files  :  pdf  xlsx  docx  7z   zip  mp3 mp4 
+---------------------------
+we are read/write/process the third party flies using the libraries.
+
+
+C - header files 
+----------------
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#include<graphics.h>
+
+
+
+
+python - libraries 
+-----------------
+
+
+
+
+
+
+
+
+task/requirement  ===         core programming      +        libraries     +    domain expertise
+                            ( procedural or oop)
+
+
+############################################################################
+
+working with flat files  : txt csv  json conf  log dat 
+---------------------------
+we can read and write directly using builtin functions and libraries 
+
+r mode 
+w mode 
+a mode 
+
+opening the file 
+----------------------
+syntax:    object = open(filename,mode)
+example:     fobj = open("customers.txt","r")   # read mode 
+
+            fobj = open("customers.txt","w")    # write mode 
+
+            fobj = open("customers.txt","a")    # append mode 
+
+
+
+closing the file 
+---------------
+fobj.close()
+
+
+
+reading the file 
+---------------------
+1.reading the file line by line 
+2. fobj.readlines() 
+3. fobj.read() 
+4. using csv library 
+5. using pandas library 
+
+
+
+writing to the file 
+---------------------
+1. fobj.write(string)
+2. fobj.writelines(list)
+3. using csvlibrary 
+4. using pandas library
+
+
+
+
+
