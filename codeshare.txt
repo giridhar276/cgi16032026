@@ -261,6 +261,358 @@ for k,v in book.items():
 
 ################################################
 
+################################# dictionary tasks #######################
+
+
+
+colors = [
+{
+"colors": "red",
+"values": "#f00"
+},
+{
+"colors": "green",
+"values": "#0f0"
+},
+{
+"colors": "blue",
+"values": "#00f"
+},
+{
+"colors": "cyan",
+"values": "#0ff"
+},
+{
+"colors": "magenta",
+"values": "#f0f"
+},
+{
+"colors": "yellow",
+"values": "#ff0"
+},
+{
+"colors": "black",
+"values": "#000"
+}
+]
+
+write a program to display all the colors and its values.
+
+sample output :
+
+red #f00
+green #0f0
+yellow  #ff0
+magenta #f0f
+..
+..
+..
+
+
+for item in colors:
+    print(item['colors'].ljust(10) , item["values"])
+################################################################
+
+Write a program to display all employee names and their departments.
+
+employees = {
+    "E001": {"name": "Alice", "department": "Finance"},
+    "E002": {"name": "Bob", "department": "IT"},
+    "E003": {"name": "Charlie", "department": "HR"}
+}
+
+
+sample output:
+
+Alice  Finance
+Bob    IT
+
+
+for key,value in employees.items():
+    print(value['name'], value['department'])
+
+
+
+
+for i in products:
+    print(i['name'], i['price'])
+    
+    
+    
+################################################################
+
+Write a program to print all product names and prices.
+
+products = [
+    {"id": 101, "name": "Laptop", "price": 75000},
+    {"id": 102, "name": "Mobile", "price": 25000},
+    {"id": 103, "name": "Tablet", "price": 15000}
+]
+
+
+
+for i in products:
+    print(i['name'], i['price'])
+
+################################################################
+
+Write a program to show student names with grades.
+
+students = [
+    {"id": 1, "name": "John", "marks": {"math": 80, "science": 75}},
+    {"id": 2, "name": "Jane", "marks": {"math": 90, "science": 85}}
+]
+
+
+for student in students:
+    print(student["name"])
+    print("--------------------")
+    for subjct,marks in student['marks'].items():
+        print(subjct,marks)
+
+################################################################
+
+Write a program to print team names and player names.
+
+teams = {
+    "TeamA": [
+        {"name": "Alice", "role": "Batsman"},
+        {"name": "Bob", "role": "Bowler"}
+    ],
+    "TeamB": [
+        {"name": "Charlie", "role": "Allrounder"},
+        {"name": "Dave", "role": "Wicketkeeper"}
+    ]
+}
+
+
+sample output:
+
+TeamA
+-----
+Alice
+Bob
+
+TeamB
+-----
+Charlie
+Dave
+
+
+
+for team,values in teams.items():
+    print(team)
+    print("--------")
+    for i in values:
+        print(i['name'])
+    print()
+
+
+
+################################################################
+Write a program to tag each VM as 'Running' or 'Stopped' based on status.
+
+output:
+vm1 - Running
+vm2 - Stopped
+
+
+
+for key,value in infra.items():
+    print(key , value['status'])
+    
+    
+    
+################################################################
+
+Write a program to deposit 1000 into all customer accounts and display the dictionary
+
+
+customers = {
+    "C001": {"name": "Alice", "balance": 5000},
+    "C002": {"name": "Bob", "balance": 12000},
+    "C003": {"name": "Charlie", "balance": 3000}
+}
+
+
+output:
+{
+    "C001": {"name": "Alice", "balance": 6000},
+    "C002": {"name": "Bob", "balance": 13000},
+    "C003": {"name": "Charlie", "balance": 4000}
+}
+
+
+################################################################
+
+Write a program to list customers with balance over 10000.
+
+
+customers = {
+    "C001": {"name": "Alice", "balance": 5000},
+    "C002": {"name": "Bob", "balance": 12000},
+    "C003": {"name": "Charlie", "balance": 3000}
+}
+
+
+for key,value in customers.items():
+    customers[key]['balance']+=1000
+print(customers)
+
+################################################################
+
+write a program to read the below dictionary and display the expected output
+
+info = {
+"id": "0001",
+"type": "donut",
+"name": "Cake",
+"image":
+{
+"url": "images/0001.jpg",
+"width": 200,
+"height": 200
+},
+"thumbnail":
+{
+"url": "images/thumbnails/0001.jpg",
+"width": 32,
+"height": 32
+}
+}
+
+
+sample output:
+
+ID              : 0001
+TYPE            : donut
+NAME            : Cake
+IMAGE URL       :"images/0001.jpg
+IMAGE WIDTH     : 200
+IMAGE HEIGHT    : 200
+THUMBNAIL URL   : "images/thumbnails/0001.jpg"
+THUMBNAIL WIDTH : 32
+THUMBNAIL HEIGHT:  32
+
+
+
+for key,value in info.items():
+    if type(value) is str:
+        print(key.ljust(20),":", value)
+        print("--------")
+    if type(value) is dict:
+        for skey,svalue in value.items():
+            finalkey = key + " " + skey
+            print(finalkey,":",svalue)
+            
+
+
+################################################################
+
+data = {
+    'Sales': {
+        'North': {
+            'Alice': 'Manager',
+            'Bob': 'Sales Executive',
+            'Eve': 'Sales Coordinator',
+            'John': 'Account Manager'
+        },
+        'South': {
+            'Charlie': 'Sales Executive',
+            'Grace': 'Regional Sales Manager',
+            'Mallory': 'Business Development Associate'
+        },
+        'West': {
+            'Oscar': 'Sales Executive',
+            'Peggy': 'Account Executive',
+            'Victor': 'Territory Sales Manager'
+        }
+    },
+    'Marketing': {
+        'Digital': {
+            'David': 'SEO Specialist',
+            'Hannah': 'Content Strategist',
+            'Irene': 'Social Media Manager'
+        },
+        'Offline': {
+            'Eve': 'Event Coordinator',
+            'Jake': 'Brand Manager',
+            'Liam': 'Public Relations Specialist'
+        },
+        'Research': {
+            'Mia': 'Market Research Analyst',
+            'Noah': 'Customer Insights Manager'
+        }
+    },
+    'IT': {
+        'Infrastructure': {
+            'Quinn': 'Network Engineer',
+            'Riley': 'System Administrator',
+            'Sam': 'Cloud Architect'
+        },
+        'Development': {
+            'Tina': 'Software Engineer',
+            'Uma': 'Backend Developer',
+            'Walter': 'Full Stack Developer'
+        }
+    },
+    'HR': {
+        'Recruitment': {
+            'Yara': 'Recruitment Specialist',
+            'Zane': 'Talent Acquisition Manager',
+            'Nina': 'HR Coordinator'
+        },
+        'Employee Relations': {
+            'Oliver': 'Employee Relations Specialist',
+            'Sophia': 'HR Business Partner'
+        }
+    },
+    'Finance': {
+        'Accounting': {
+            'Xander': 'Accountant',
+            'Yvette': 'Accounts Payable Specialist',
+            'Zara': 'Financial Analyst'
+        },
+        'Audit': {
+            'Luna': 'Internal Auditor',
+            'Mason': 'Compliance Officer'
+        }
+    }
+}
+
+
+write a program to display the below output:
+
+
+Sales
+-----
+North
+South
+West
+
+
+Marketing
+--------
+Digital
+Offline
+Research
+
+
+IT
+---
+Infrasturcture
+Development
+
+HR
+---
+Recruitment
+Employee Relations
+
+
+################################################################
+
+
+
 
 
 
