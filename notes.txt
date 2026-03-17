@@ -1,3 +1,5 @@
+
+
 C programming - datatypes 
 ---------------------
 int a = 10;
@@ -108,6 +110,16 @@ set methods.
 
 
 
+conditional statements 
+-----------------------
+if 
+if-else 
+if-elif-elif-elif-elif-else 
+
+control statements 
+----------------------
+for loop 
+while loop
 
 
 
@@ -124,8 +136,266 @@ set methods.
 
 
 
+#### 
+# c
+for ( i = 1 ; i <=10 ;i++ )
+{
+
+}
+
+# python 
+
+for val in range(1,11):
+    print(val)
+
+
+file handling 
+---------------
+txt 
+csv 
+conf
+xlsx 
+docx 
+pdf 
+zip 
+rar
+log 
+json 
+rar 
+mp3 
+mp4
+dat 
+jpg
+gif
+json 
+yaml 
+msg
+7z 
+pptx 
+sh 
+bat 
+
+
+working with flat files  : txt csv  json conf  log dat 
+---------------------------
+we can read and write directly using builtin functions and libraries 
+
+
+
+working with third party files  :  pdf  xlsx  docx  7z   zip  mp3 mp4 
+---------------------------
+we are read/write/process the third party flies using the libraries.
+
+
+C - header files 
+----------------
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#include<graphics.h>
+
+
+
+
+python - libraries   www.pypi.org - it contains all the third party libraries 
+-----------------
 
 
 
 
 
+
+
+
+task/requirement  ===         core programming      +        libraries     +    domain expertise
+                            ( procedural or oop)
+
+
+############################################################################
+
+working with flat files  : txt csv  json conf  log dat 
+---------------------------
+we can read and write directly using builtin functions and libraries 
+
+r mode 
+w mode 
+a mode 
+
+opening the file 
+----------------------
+syntax:    object = open(filename,mode)
+example:     fobj = open("customers.txt","r")   # read mode 
+
+            fobj = open("customers.txt","w")    # write mode 
+
+            fobj = open("customers.txt","a")    # append mode 
+
+
+
+closing the file 
+---------------
+fobj.close()
+
+
+
+reading the file 
+---------------------
+1.reading the file line by line 
+2. fobj.readlines() 
+3. fobj.read() 
+4. using csv library 
+5. using pandas library 
+
+
+
+writing to the file 
+---------------------
+1. fobj.write(string)
+2. fobj.writelines(list)
+3. using csvlibrary 
+4. using pandas library
+
+
+
+r mode 
+------
+file should exist to read the file
+
+w mode 
+-------
+if the file is not existing .. file gets created
+if the file is already existing.. it overwrites the existing content
+
+
+
+a mode
+----
+# if the file is not existing .. file gets created
+# if the file is already existing.. it adds the new content to the end of the file
+
+
+
+There are 2 types of functions 
+------------------------------
+
+1. builtin functions 
+
+2. user defined functions 
+
+
+
+
+user defined functions 
+----------------------
+
+
+function | definition | block | submodule | subroutine 
+--------------------------------------------------------
+- piece of code for reusability purpose 
+- we define it once and call it for multiple times 
+
+
+
+different ways of passing arguments 
+------------------
+fixed arguments
+default arguments 
+keyword arguments
+variable length arguments 
+
+
+
+library | module | package | routine 
+---------------------------------------
+There are 2 types of libraries 
+
+1. builtin libraries 
+2. third party libraries 
+
+
+1. builtin libraries 
+------------------------
+bulitin librarie that are generally used are installed with python itself.
+
+
+################################### frequently used builtin libraries #############################
+
+os         : os level activities
+math       : mathematical operations
+sys        :  sys and python config data
+shutil     : copy,move, rmtree  etc
+urllib     : read the web, downloading the files
+logging    : logging all the events
+smtplib    : sending the mails
+ftplib     : performing ftp operations
+sysconfig  :  sys and python config data
+zipfile    : create/extract the zip files
+rarfile    : create/extract the rar files
+cryptopgraphy : encrypting and decrypting the data or files
+tarfile    : create/extract the tar files
+filecmp    : comparing files or directories
+sqlite3    : python default database
+csv        : reading/writing csv files
+xml        : reading/writing xml files
+calendar   : display month,year calendar info
+datetime   : working with date n time
+time       : working with date n time
+fractions  : working with decimal values
+glob       : display all the files
+heapq      : more of array operations ( getting largest among list )
+subprocess : executing system commands in python (  subprocess.getoutput("ls -ltr")
+pdb        : python debugger
+platform   : platform information
+random     : random operations ( shuffling , random digit ... )
+re         : grep + awk + sed
+socket     : networking programming
+stat       : stats of the file
+statistics : basic statistics
+pathlib	   : Object-oriented file path operations
+time	     : Delays, timestamps, performance checks
+logging	   : Logging for scripts/apps (replace print for real apps)
+argparse	 : Command-line interface (CLI) argument parsing
+configparser : 	Read/write .ini config files
+json	     :Serialize/deserialize JSON (common in APIs)
+uuid	     : Generate unique IDs (useful in files, databases)
+statistics	:Basic stats: mean, median, stdev
+random	    :Random number generation, sampling
+collections	:Specialized containers (defaultdict, Counter, namedtuple)
+traceback	   :Print/format exception tracebacks
+warnings	   :Raise and handle warnings
+
+
+third party library 
+---------------------
+Depending on the requirement(cloud automation, ML, DL, gen ai, web, test),  developer has to instal third party library 
+ from www.pypi.org using pip tool.
+
+
+filetype         library
+--------------------------
+csv file            csv 
+excel files        openpyxl 
+xml                 xml.dom 
+json                json 
+yaml                 yaml 
+docx                python-docx
+
+
+
+There are 2 python extensions 
+-----------------------------------
+hello.py   ----> regular python program 
+-----------
+regular automations 
+web development 
+deployements
+
+
+
+
+hello.ipynb   --> interactive python notebook
+---------------
+ userfriendly
+line by line execution 
+analytics
+data science 
