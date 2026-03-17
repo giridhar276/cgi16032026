@@ -649,5 +649,492 @@ print(df)
 
 
 
+############## file write operation 
+
+
+
+fobj = open("customers.txt","w")
+fobj.write("this is first line\n")
+fobj.write("this is second line\n")
+fobj.writelines(["unix","java","C","oracle\n"])
+
+for val in range(1,10):
+    fobj.write( str(val)  + "\n")
+fobj.close()
+
+
+
+
+
+# context manager
+# if any line begins using with keyword .. it is called as context manager
+# Advantage: file gets closed automatically
+with open("customers.txt","w") as fobj:
+    fobj.write("this is first line\n")
+    fobj.write("this is second line\n")
+    
+    
+    
+    
+
+
+
+
+# fixed arguments
+def display(a,b):
+    print(a,b)
+display(10,20)
+
+# default arguments
+def display(a = 0,b = 0,c = 0,d = 0):
+    print(a,b,c,d)
+display()
+display(10)
+display(10,20)
+display(10,20,30)
+display(10,20,30,40)
+
+# keyword arguments
+def display(c,a,b):
+    print(a,b,c)
+display(b = 20,c= 30,a =10)
+
+# variable length arguments
+def display(*args):
+    for val in args:
+        print(val)
+    print("total sum :",sum(args))
+display(10,20,30,40,50,60,70,80,90,100,110,120,13,53,43,54,23,645,2,423)
+
+
+def displayinfo(**kwargs):
+    print(kwargs)
+    for k,w in kwargs.items():
+        print(k,w)
+displayinfo(chap1=10,chap2=30)
+
+
+
+
+
+
+# regular way
+# every process contains system calls
+def display(a,b):
+    c  = a +b
+    return c
+output = display(10,20)
+print(output)
+
+
+# pythonic way
+# lambda function : lambda is the replacement of single liner function
+# syntax:
+# functioname = lambda variables : expression
+
+display = lambda a, b: a + b
+output = display(10,20)
+print(output)
+
+
+
+
+################################################
+
+
+
+# 1. Add two numbers
+add = lambda a, b: a + b
+print(add(3, 5))  # 8
+
+# 2. Square of a number
+square = lambda x: x ** 2
+print(square(4))  # 16
+
+# 3. Length of a string
+length = lambda s: len(s)
+print(length("python"))  # 6
+
+
+# 4. Multiply three numbers
+mul = lambda a, b, c: a * b * c
+print(mul(2, 3, 4))  # 24
+
+
+# 5. Convert to uppercase
+upper = lambda s: s.upper()
+print(upper("hello"))  # HELLO
+
+
+# 6. Reverse string
+reverse = lambda s: s[::-1]
+print(reverse("lambda"))  # adbmal
+
+
+
+
+
+
+# 1. Max of two numbers
+maximum = lambda a, b: a if a > b else b
+print(maximum(10, 20))  # 20
+
+
+
+
+# 2. Pass or Fail
+result = lambda marks: "Pass" if marks >= 35 else "Fail"
+print(result(30))  # Fail
+
+
+
+
+# 3. Even or Odd
+even_odd = lambda x: "Even" if x % 2 == 0 else "Odd"
+print(even_odd(9))  # Odd
+
+
+
+# 4. Positive, Negative or Zero
+sign = lambda x: "Positive" if x > 0 else "Negative" if x < 0 else "Zero"
+print(sign(-5))  # Negative
+
+
+
+
+# 5. Grade categorization
+grade = lambda m: 'A' if m >= 90 else 'B' if m >= 75 else 'C'
+print(grade(80))  # B
+
+
+# 6. Adult or Minor
+age_check = lambda age: "Adult" if age >= 18 else "Minor"
+print(age_check(17))  # Minor
+
+# 7. Number is multiple of 3
+multiple_of_3 = lambda x: "Yes" if x % 3 == 0 else "No"
+print(multiple_of_3(9))  # Yes
+
+# 8. Leap year check
+leap_year = lambda y: "Leap" if (y % 4 == 0 and y % 100 != 0) or (y % 400 == 0) else "Not Leap"
+print(leap_year(2020))  # Leap
+
+# 9. Compare lengths
+compare_len = lambda a, b: "Equal" if len(a) == len(b) else "Not Equal"
+print(compare_len("hi", "by"))  # Equal
+
+# 10. Password strength
+password_check = lambda pwd: "Strong" if len(pwd) >= 8 else "Weak"
+print(password_check("pass123"))  # Weak
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+alist = [10,20,30,40,50]
+#output: [15,25,35,45,55]
+blist = []
+for val in alist:
+    blist.append( val + 5)
+print(blist)
+
+#################### map with lambda() ####################
+
+
+alist = [10,20,30,40,50]
+
+# map(function,iterable)
+increment = lambda x : x + 5
+print(list(map(increment, alist)))
+
+
+print(dir(__builtins__))
+
+
+#Convert to strings
+nums = [1, 2, 3, 4, 5]
+to_str = list(map(lambda x: str(x), nums))
+print(to_str)  # ['1', '2', '3', '4', '5']
+
+
+#Convert floats to ints
+floats = [2.5, 3.6, 4.1]
+ints = list(map(lambda x: int(x), floats))
+print(ints)  # [2, 3, 4]
+
+
+
+#Uppercase names
+names = ["alice", "bob", "carol"]
+upper_names = list(map(lambda x: x.upper(), names))
+print(upper_names)  # ['ALICE', 'BOB', 'CAROL']
+
+
+
+#Extract domain from email
+emails = ["user1@gmail.com", "user2@yahoo.com"]
+domains = list(map(lambda x: x.split("@")[1], emails))
+print(domains)
+
+
+names = ["Alice", "Bob"]
+greeted = list(map(lambda x: "Mr./Ms. " + x, names))
+print(greeted)
+
+
+
+
+
+################################### frequently used builtin libraries #############################
+
+os         : os level activities
+math       : mathematical operations
+sys        :  sys and python config data
+shutil     : copy,move, rmtree  etc
+urllib     : read the web, downloading the files
+logging    : logging all the events
+smtplib    : sending the mails
+ftplib     : performing ftp operations
+sysconfig  :  sys and python config data
+zipfile    : create/extract the zip files
+rarfile    : create/extract the rar files
+cryptopgraphy : encrypting and decrypting the data or files
+tarfile    : create/extract the tar files
+filecmp    : comparing files or directories
+sqlite3    : python default database
+csv        : reading/writing csv files
+xml        : reading/writing xml files
+calendar   : display month,year calendar info
+datetime   : working with date n time
+time       : working with date n time
+fractions  : working with decimal values
+glob       : display all the files
+heapq      : more of array operations ( getting largest among list )
+subprocess : executing system commands in python (  subprocess.getoutput("ls -ltr")
+pdb        : python debugger
+platform   : platform information
+random     : random operations ( shuffling , random digit ... )
+re         : grep + awk + sed
+socket     : networking programming
+stat       : stats of the file
+statistics : basic statistics
+pathlib	   : Object-oriented file path operations
+time	     : Delays, timestamps, performance checks
+logging	   : Logging for scripts/apps (replace print for real apps)
+argparse	 : Command-line interface (CLI) argument parsing
+configparser : 	Read/write .ini config files
+json	     :Serialize/deserialize JSON (common in APIs)
+uuid	     : Generate unique IDs (useful in files, databases)
+statistics	:Basic stats: mean, median, stdev
+random	    :Random number generation, sampling
+collections	:Specialized containers (defaultdict, Counter, namedtuple)
+traceback	   :Print/format exception tracebacks
+warnings	   :Raise and handle warnings
+
+
+
+
+
+# method1:  all the methods are imported to your programspace
+import math 
+print(math.log(1))
+print(math.tan(1))
+
+
+# method2: importing with alias name
+import math as m 
+print(m.sin(1))
+print(m.factorial(4))
+
+# method3: importing required methods only 
+from math import log,tan
+print(log(1))
+print(tan(2))
+
+
+
+
+
+if you want to read from URL directly :
+https://raw.githubusercontent.com/giridhar276/cgi16032026/refs/heads/main/employee.csv
+
+
+if you want td download the file 
+https://github.com/giridhar276/cgi16032026/blob/main/employee.csv
+
+
+
+
+
+import pandas as pd
+
+
+
+
+df = pd.read_csv("https://raw.githubusercontent.com/giridhar276/cgi16032026/refs/heads/main/employee.csv")
+
+
+
+
+df
+
+
+
+
+# display first 5 records only
+df.head(10)  # 5 is the default 
+
+
+
+
+# dispilay last 5 records
+df.tail(5)
+
+
+
+
+# display range of records : 5th to 10th record
+# df.iloc[rows, columns]
+df.iloc[5:11]
+
+
+
+
+
+# get info of the dataframe
+df.info()
+
+
+
+
+
+
+# just display datypes
+df.dtypes
+
+
+
+
+# summary( basic statistics ) of whole daframe ( default to int columns) 
+df.describe()
+
+
+
+
+# display one single column
+# select workclass from employee - sql type
+df["workclass"]
+
+
+
+
+# display unique workclasses only
+df["workclass"].unique()
+
+
+
+
+
+# display no.of unique workclasses only
+df["workclass"].nunique()
+
+
+
+
+
+# display the column names only
+df.columns
+
+
+
+
+
+# display multiple columns
+df[['age','education']]
+
+
+
+
+# write this output to a csv file
+df[['age','education']].to_csv("finaloutput.csv",index=None)
+
+
+
+
+
+df.head(40).to_csv("first40records.csv")
+
+
+
+
+
+
+###### conditions in pandas ############
+# select * from tablename where deprt = 'Sales'
+# display all the records where workclass is Private
+condition = df['workclass'] == " Private"
+df[condition]
+
+
+
+# or
+df[df['workclass'] == " Private"]
+
+
+
+
+# workclass is private and gender is female
+cond1 = df['workclass'] == " Private"
+cond2 = df['gender'] == " Female"
+
+df[(cond1) & (cond2)]
+
+
+
+
+# sorting dataframe based on column in ascending order 
+df.sort_values('age')
+
+
+
+
+# in descending order
+df.sort_values('age', ascending= False)
+
+
+
+
+# count no. of rows with each unique value
+df['workclass'].value_counts()
+
+
+
+
+
+
+### handling missing values
+df.dropna()   # drop rows with any column having Null data
+
+
+
+df.fillna(0)  # replace all null data with 0
+
+
+
+
+
+
+
+
+
 
 
